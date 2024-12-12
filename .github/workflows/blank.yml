@@ -16,5 +16,5 @@ jobs:
           USERNAME: ${{ github.actor }}
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          VERSION: ${{ github.ref }}
+          VERSION: ${{ github.ref_name }}
 
