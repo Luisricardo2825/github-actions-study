@@ -11,5 +11,11 @@ jobs:
     steps:
       - name: Imprimir tag
         run: | 
-              TAG=$(echo "$GITHUB_REF" | sed 's/refs\/tags\///')
-              echo "Tag: ${{ github.event.release.tag_name }}"
+              echo "Tag: $VERSION"
+
+        env:
+          USERNAME: ${{ github.actor }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          VERSION: ${{ github.event.release.tag_name }}
+
